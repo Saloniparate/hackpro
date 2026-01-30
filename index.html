@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Hospital Management System Pro+</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-mode">
+  <header>
+    <div class="title">
+      <h1>🏥 Smart Hospital Management System Pro+</h1>
+      <p>Built with Data Structures: Linked List • Queue • Stack • Hash Map</p>
+    </div>
+    <button id="themeToggle">🌙 Dark Mode</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="register card">
+      <h2>➕ Register Patient</h2>
+      <input id="pname" placeholder="Name" />
+      <input id="page" type="number" placeholder="Age" />
+      <input id="pdisease" placeholder="Disease" />
+      <select id="pdept">
+        <option>General</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Orthopedics</option>
+      </select>
+      <select id="ppriority">
+        <option>Normal</option>
+        <option>Emergency</option>
+      </select>
+      <button onclick="addPatient()">Add Patient</button>
+    </section>
+
+    <section class="visual card">
+      <h2>👥 Queue Visualization</h2>
+      <canvas id="queueCanvas" width="850" height="220"></canvas>
+    </section>
+
+    <section class="actions card">
+      <h2>⚙️ Actions</h2>
+      <button onclick="treatNext()">Treat Next</button>
+      <button onclick="undoLastTreatment()">Undo Last Treatment</button>
+      <input id="search" placeholder="🔍 Search patient" oninput="searchPatient()" />
+    </section>
+
+    <section class="patients card">
+      <h2>📋 Current Patients (Linked List)</h2>
+      <ul id="patientList"></ul>
+    </section>
+
+    <section class="history card">
+      <h2>🕓 Treatment History (Stack)</h2>
+      <ul id="historyList"></ul>
+    </section>
+
+    <section class="stats card">
+      <h2>📊 Statistics</h2>
+      <p id="totalPatients"></p>
+      <p id="treatedPatients"></p>
+      <p id="emergencyCount"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Smart Hospital Pro+ | Made with ❤️ using HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

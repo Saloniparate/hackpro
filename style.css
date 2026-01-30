@@ -1,0 +1,149 @@
+/* ---------- Base Styles ---------- */
+:root {
+  --bg-light: #f5f7fa;
+  --text-light: #1e1e1e;
+  --card-light: #ffffff;
+  --bg-dark: #0e141b;
+  --text-dark: #e0e6ed;
+  --card-dark: #1b2735;
+  --accent: #007bff;
+  --accent-hover: #0056b3;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ---------- Light/Dark Mode ---------- */
+body.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent);
+  color: white;
+  padding: 15px 30px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#themeToggle {
+  background: white;
+  border: none;
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#themeToggle:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  padding: 25px;
+}
+
+.card {
+  background: var(--card-light);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: background 0.3s, transform 0.3s;
+}
+
+body.dark-mode .card {
+  background: var(--card-dark);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- Inputs & Buttons ---------- */
+input, select {
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ---------- Queue Visualization ---------- */
+canvas {
+  background: #f0f4f9;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 850px;
+  margin-top: 10px;
+}
+
+body.dark-mode canvas {
+  background: #16222e;
+}
+
+/* ---------- Lists ---------- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #eef2f5;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+body.dark-mode li {
+  background: #22303f;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--accent);
+  color: white;
+  margin-top: 30px;
+  border-top: 2px solid #004a99;
+}
